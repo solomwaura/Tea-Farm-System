@@ -65,39 +65,57 @@ include "header.php";
         }
         
     }else{ 
-        $to = $email;
-        $subject = "Farmerid And Password";
-        $msg = 'Hello '.$fname.',
-        Your farmer Id is '.$factoryid.'
-        Your login password is: '.$pass.'';
-        $msg = wordwrap($msg,70);
-        $headers = "From:waltercoddiner.elementfx.com";
-        $mail=mail($to, $subject, $msg, $headers);
-      if($mail){
+        $sql3="INSERT INTO `users`(`fname`, `sname`, `lname`, `email`, `pnumber`, `usertype`,profile,`password`, `factoryid`, `bankname`, `bankbranch`, `accountnumber`, `accountname`, `collectioncenter`,`pass`) VALUES ('$fname','$sname','$lname','$email','$pnumber','$usertype','avatar.jpg','$password','$factoryid','$bankname','$bankbranch','$accountnumber','$accountname','$collectioncenter','$pass')";
+        $results=mysqli_query($conn,$sql3);
+            if($results){
 
-                    $sql3="INSERT INTO `users`(`fname`, `sname`, `lname`, `email`, `pnumber`, `usertype`,profile,`password`, `factoryid`, `bankname`, `bankbranch`, `accountnumber`, `accountname`, `collectioncenter`) VALUES ('$fname','$sname','$lname','$email','$pnumber','$usertype','avatar.jpg','$password','$factoryid','$bankname','$bankbranch','$accountnumber','$accountname','$collectioncenter')";
-                    $results=mysqli_query($conn,$sql3);
-                        if($results){
-        
-                          $sql4="INSERT INTO `token` (`token`) VALUES ('$number')";
-                          $sql4res=mysqli_query($conn,$sql4);
-                          
-                          echo "<div class='alert alert-success'>";
-                          echo "Registered Successfully Check Your Email For Farmer Id And Password";
-                          echo "</div>";
-        
-        
-                        }else{
-                            echo "something went wrong";
-                        }  
-      }else{
-      echo "Email not Sent Register again";
-      }
+                $sql4="INSERT INTO `token` (`token`) VALUES ('$number')";
+                $sql4res=mysqli_query($conn,$sql4);
                 
-        }
+                echo "<div class='alert alert-success'>";
+                echo "Registered Successfully Check Your Email For Farmer Id And Password";
+                echo "</div>";
+
+
+            }else{
+                echo "something went wrong";
+            }
+        // $to = $email;
+        // $subject = "Farmerid And Password";
+        // $msg = 'Hello '.$fname.',
+        // Your farmer Id is '.$factoryid.'
+        // Your login password is: '.$pass.'';
+        // $msg = wordwrap($msg,70);
+        // $headers = "From:bablinetfms.tea.com";
+        // ini_set('SMTP','smtp.gmail.com');
+        // ini_set('smtp_port',587);
+        // ini_set("sendmail_from", "babline@ tfms.com");
+        // $mail=mail($to, $subject, $msg, $headers);
+    }
+    //   if($mail){
+
+    //                 $sql3="INSERT INTO `users`(`fname`, `sname`, `lname`, `email`, `pnumber`, `usertype`,profile,`password`, `factoryid`, `bankname`, `bankbranch`, `accountnumber`, `accountname`, `collectioncenter`,`pass`) VALUES ('$fname','$sname','$lname','$email','$pnumber','$usertype','avatar.jpg','$password','$factoryid','$bankname','$bankbranch','$accountnumber','$accountname','$collectioncenter','$pass')";
+    //                 $results=mysqli_query($conn,$sql3);
+    //                     if($results){
         
-    
-}
+    //                       $sql4="INSERT INTO `token` (`token`) VALUES ('$number')";
+    //                       $sql4res=mysqli_query($conn,$sql4);
+                          
+    //                       echo "<div class='alert alert-success'>";
+    //                       echo "Registered Successfully Check Your Email For Farmer Id And Password";
+    //                       echo "</div>";
+        
+        
+    //                     }else{
+    //                         echo "something went wrong";
+    //                     }  
+    //   }else{
+    //   echo "Email not Sent Register again";
+    //   }
+                
+    }
+        
+
 ?>
                  </h4>
              </div>
