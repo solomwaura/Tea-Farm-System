@@ -126,7 +126,7 @@ if($results){
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/log.png" alt="">
-        <span class="d-none d-lg-block">Coddiner's Admin Area</span>
+        <span class="d-none d-lg-block">Admin Dashboard</span>
 
         
       </a>
@@ -376,12 +376,12 @@ if($results){
           </li>
         </ul>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item" id="void-chat">
         <a class="nav-link collapsed" href="chart.php">
         <i class="bi bi-chat-dots-fill"></i>
           <span>Chart</span>
         </a>
-      </li>
+      </li> -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="logout.php">

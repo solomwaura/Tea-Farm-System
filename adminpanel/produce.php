@@ -67,16 +67,16 @@ include "header.php";
                 $email=$rowS['email'];
             }
 
-            $to = $email;
-            $subject = "Produce Record";
-            $msg = 'Hello ' . $fname . ',
-            Todays Tea Weight: ' . $weight . '
-            Todays Tea Cash: ' . $dtpay . '
-            cumulative weight This Month: ' . $tot ?? null . '
-            cumulative Cash This Month: ' . $totc ?? null . '';
-            $msg = wordwrap($msg,70);
-            $headers = "From: coddiner123@gmail.com, Tea Farmers Company";
-            mail($to, $subject, $msg, $headers);
+            // $to = $email;
+            // $subject = "Produce Record";
+            // $msg = 'Hello ' . $fname . ',
+            // Todays Tea Weight: ' . $weight . '
+            // Todays Tea Cash: ' . $dtpay . '
+            // cumulative weight This Month: ' . $totc ?? null . '
+            // cumulative Cash This Month: ' . $totc ?? null . '';
+            // $msg = wordwrap($msg,70);
+            // $headers = "From: coddiner123@gmail.com, Tea Farmers Company";
+            // mail($to, $subject, $msg, $headers);
 
 
 
